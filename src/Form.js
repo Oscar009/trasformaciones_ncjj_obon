@@ -25,7 +25,12 @@ const Form = (props) => {
         <h2>Rotación</h2>
 
         <h3>Ángulo</h3>
-        <input type="number" />
+        <input
+          type="number"
+          onChange={handleChange}
+          name="angule"
+          value={props.angule || 0}
+        />
       </div>
 
       <div
@@ -39,10 +44,20 @@ const Form = (props) => {
         <h2>Traslación</h2>
 
         <p>Tx:</p>
-        <input type="number" onChange={handleChange} name="tx" value={props.tx || 0}/>
+        <input
+          type="number"
+          onChange={handleChange}
+          name="tx"
+          value={props.tx || 0}
+        />
 
         <p>Ty:</p>
-        <input type="number" />
+        <input
+          type="number"
+          onChange={handleChange}
+          name="ty"
+          value={props.ty || 0}
+        />
       </div>
 
       <div
@@ -56,10 +71,20 @@ const Form = (props) => {
         <h2>Escala</h2>
 
         <p>Sx:</p>
-        <input type="number" />
+        <input
+          type="number"
+          onChange={handleChange}
+          name="sx"
+          value={props.sx || 0}
+        />
 
         <p>Sy:</p>
-        <input type="number" />
+        <input
+          type="number"
+          onChange={handleChange}
+          name="sy"
+          value={props.sy || 0}
+        />
       </div>
 
       <br></br>

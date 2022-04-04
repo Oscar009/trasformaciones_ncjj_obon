@@ -1,6 +1,5 @@
 import "./App.css";
 import React, { useState } from "react";
-import Matrix from "./Matrix";
 import Canva from "./Canva";
 import Form from "./Form";
 
@@ -12,9 +11,17 @@ function App() {
   });
 
   const [tx, setTx] = useState(0);
+  const [ty, setTy] = useState(0);
+  const [sx, setSx] = useState(0);
+  const [sy, setSy] = useState(0);
+  const [angule, setAngule] = useState(0);
 
   const handleUpdateFromDad = (field, value) => {
     if (field === "tx") setTx(parseInt(value));
+    if (field === "ty") setTy(parseInt(value));
+    if (field === "sx") setSx(parseInt(value));
+    if (field === "sy") setSy(parseInt(value));
+    if (field === "angule") setAngule(parseInt(value));
   };
 
   const calculateTransformation = () => {
@@ -38,14 +45,16 @@ function App() {
     >
       <h1>Transformaciones bidimensionales</h1>
       <Form
-      tx={tx}
+        tx={tx}
+        ty={ty}
+        sx={sx}
+        sy={sy}
+        angule={angule}
         handleUpdateFromDad={handleUpdateFromDad}
         calculateTransformation={calculateTransformation}
       />
-      Padre:{tx}
       <br></br>
       <Canva points={points} />
-      {/* <Matrix /> */}
     </div>
   );
 }
